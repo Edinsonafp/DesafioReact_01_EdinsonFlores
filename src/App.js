@@ -1,13 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import ItemList from './components/ItemListContainer';
 import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
 
 function App() {
   return (
     <>
-      <NavBar/>
-      <ItemList name="Hotel Edinson" index="Index" desplegable="Desplegable" ofertas="Ofertas"/>
+      <NavBar/>      
+      <ItemListContainer/>
     </>
   );
 }

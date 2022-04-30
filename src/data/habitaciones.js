@@ -1,0 +1,6 @@
+export const habitaciones = [
+    {id: 1, title: "Suit", description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.", price:"1000", pictureUrl: require("../contents/img/suit.jpg")},
+    {id: 2, title: "Doble", description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.", price:"800", pictureUrl: require("../contents/img/doble.jpg")},
+    {id: 3, title: "Individual", description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.", price:"500", pictureUrl: require("../contents/img/individual.jpg")},
+    {id: 4, title: "Compartida", description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.", price:"400", pictureUrl: require("../contents/img/compartida.jpg")}
+]
