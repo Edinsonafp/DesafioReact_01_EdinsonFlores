@@ -1,6 +1,6 @@
 import React, { useState , useEffect } from 'react'
 import { habitaciones as habData } from "../data/habitaciones"
-import ItemList from './ItemList'
+import Item from './Item'
 
 const ItemListContainer = () => {
 
@@ -25,7 +25,7 @@ const ItemListContainer = () => {
 
   return (
     <div className="flex justify-between mt-2">
-      {habs.map( habs =><ItemList habsData = {habs}/>)}
+      {habs.map( habs =><Item habsData = {habs}/>)}
     </div>
   )
 }

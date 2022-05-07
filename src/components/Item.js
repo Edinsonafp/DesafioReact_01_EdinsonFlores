@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const ItemList = ({habsData}) => {
+const Item = ({habsData}) => {
   return (
     <>
     <div className="card card-compact w-96 bg-base-100 shadow-xl" key={habsData.id}>
@@ -9,7 +10,7 @@ const ItemList = ({habsData}) => {
             <h2 className="card-title">{habsData.title}</h2>
             <p>{habsData.description}</p>
             <div className="card-actions justify-end">
-            <button className="btn btn-primary">Rentar por {habsData.price} $</button>
+            <Link to={`/habitaciones/${habsData.id}`} className="btn btn-primary">Rentar por {habsData.price} $</Link>
             </div>
         </div>
     </div>
@@ -17,4 +18,4 @@ const ItemList = ({habsData}) => {
   )
 }
 
-export default ItemList
+export default Item
