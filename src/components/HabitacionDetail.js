@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { CartContext } from '../Context/cartContext'
 import { habitaciones } from '../data/habitaciones'
+import ItemCount from './ItemCount'
 
 const HabitacionDetail = () => {
 
   const {habID} = useParams()
   const [habitacion, setHabitacion] = useState({})
   const { addItem , isInCart} = useContext(CartContext)
-  const [cantHab, setCantHab] = useState(1)
+  /** const [cantHab, setCantHab] = useState(1) **/
 
   useEffect(() => {
     (async () => {
@@ -26,6 +27,8 @@ const HabitacionDetail = () => {
       }, 0);
     })
   }
+
+ 
   
   
   return (
@@ -36,8 +39,10 @@ const HabitacionDetail = () => {
         <h2 ClassName="card-title">Habitacion {habitacion.title}</h2>
         <h2 ClassName="card-title">{habitacion.price} por noche</h2>
         <p>{habitacion.description}</p>
-        <input type="number" placeholder="Cantidad de noches" class="input input-bordered w-full max-w-xs" value={cantHab} onChange={e => setCantHab(e.target.value)}/>
-        <button onClick={ () => { (isInCart(habitacion.id)) ? addItem(habitacion.id, cantHab, true) : addItem(habitacion.id, habitacion, cantHab, false)}} className="btn">Rentar</button>
+        <h2 ClassName="card-title">Cantidad de habitaciones disponibles: {habitacion.cantidad}</h2>
+        {/** }<input type="number" placeholder="Cantidad de noches" class="input input-bordered w-full max-w-xs" value={cantHab} onChange={e => setCantHab(e.target.value)}/>
+        <button onClick={ () => { (isInCart(habitacion.id)) ? addItem(habitacion.id, cantHab, true) : addItem(habitacion.id, habitacion, cantHab, false)}} className="btn">Rentar</button>{**/ }
+        <ItemCount initial={1} stock={habitacion.cantidad} habitacion ={habitacion}/>
         <div class="card-actions justify-end">
           <Link to={"/habitaciones"} className="btn btn-primary">Ver otras habitaciones</Link>
         </div>

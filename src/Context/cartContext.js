@@ -11,15 +11,16 @@ export const CartContext = createContext({
 const CartContextProvider = ({children})=>{
     const [cart, setCart] = useState([])
 
-    const addItem =  (id, hab, cantHab, existe) => {
+    const addItem =  (id, hab, cantHab, existe, total) => {
         if(existe){
             const habs = cart
             const index = habs.findIndex(hab => hab.habId == id)
             habs[index].cantHab = cantHab
+            habs[index].total = total
             setCart(habs)
         }else{
             setCart( habAdded =>{
-                return habAdded.concat({habId: id, hab : hab, cantHab : cantHab})
+                return habAdded.concat({habId: id, hab : hab, cantHab : cantHab, total: total})
             })
         }
         

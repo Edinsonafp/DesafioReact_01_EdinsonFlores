@@ -4,7 +4,7 @@ import { CartContext } from '../Context/cartContext'
 const CartDetail = () => {
 
   const { cart , removeItem, clear } = useContext(CartContext)
-  const total = cart.reduce((count, currentValue) => count = count + parseInt(currentValue.hab.price),0);
+  const total = cart.reduce((count, currentValue) => count = count + currentValue.total,0);
   return (
     <div>
       <div class="overflow-x-auto">
