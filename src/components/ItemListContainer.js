@@ -11,7 +11,7 @@ const ItemListContainer = () => {
     const getHabs = new Promise ( (resolve, reject)=>{
       setTimeout(() => {
         resolve(habData)
-      }, 2000);
+      }, 0);
       
     })
 

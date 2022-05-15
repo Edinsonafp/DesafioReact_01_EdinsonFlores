@@ -9,8 +9,8 @@ const Item = ({habsData}) => {
         <div className="card-body">
             <h2 className="card-title">{habsData.title}</h2>
             <p>{habsData.description}</p>
-            <div className="card-actions justify-end">
-            <Link to={`/habitaciones/${habsData.id}`} className="btn btn-primary">Rentar por {habsData.price} $</Link>
+            <div className="card-actions justify-end">            
+            <Link to={`/habitaciones/${habsData.id}`} className="btn btn-primary">Ver detalle</Link>
             </div>
         </div>
     </div>
