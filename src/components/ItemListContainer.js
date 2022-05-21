@@ -25,7 +25,7 @@ const ItemListContainer = () => {
 
   return (
     <div className="flex justify-between mt-2">
-      {habs.map( habs =><Item habsData = {habs}/>)}
+      {habs.map( habs =><Item key={habs.id} habsData = {habs}/>)}
     </div>
   )
 }

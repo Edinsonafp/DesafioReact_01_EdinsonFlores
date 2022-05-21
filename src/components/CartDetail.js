@@ -7,8 +7,8 @@ const CartDetail = () => {
   const total = cart.reduce((count, currentValue) => count = count + currentValue.total,0);
   return (
     <div>
-      <div class="overflow-x-auto">
-            <table class="table table-zebra w-full">
+      <div className="overflow-x-auto">
+            <table className="table table-zebra w-full">
               <thead>
                 <tr>
                   <th>ID</th>
@@ -22,13 +22,13 @@ const CartDetail = () => {
               <tbody>
                 {cart.map(cart => 
                   <>               
-                    <tr>
-                      <th>{cart.hab.id}</th>
+                    <tr key={cart.habId}>
+                      <th>{cart.habId}</th>
                       <td>{cart.hab.title}</td>
                       <td>{cart.cantHab}</td>
                       <td>{cart.hab.price}</td>
                       <td>{cart.hab.price * cart.cantHab}</td>
-                      <td><button class="btn btn-error" onClick={ () => { removeItem(cart.hab.id)}}>Eliminar</button></td>
+                      <td><button className="btn btn-error" onClick={ () => { removeItem(cart.habId); }}>Eliminar</button></td>
                     </tr>
                   </> 
                   )}  
@@ -38,7 +38,7 @@ const CartDetail = () => {
                     <td></td>                    
                     <th>Total</th>
                     <th>{total}</th>
-                    <td><button class="btn btn-error" onClick={ () => { clear()}}>Eliminar Todo</button></td>
+                    <td><button className="btn btn-error" onClick={ () => { clear()}}>Eliminar Todo</button></td>
                   </tr>              
               </tbody>
             </table>

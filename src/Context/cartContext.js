@@ -27,9 +27,11 @@ const CartContextProvider = ({children})=>{
     }
 
     const removeItem = (id) => {
-        setCart( habAdded =>{
-            return habAdded.splice(id)
-        })
+        //Se clona el cart porque si se elimina React no detecta cambios y no re renderiza el DOM
+        const test = cart.slice()
+        const index = test.findIndex(test => test.habId == id)
+        test.splice(index, 1)
+        setCart(test)
     }
 
     const clear = () => {
@@ -39,7 +41,6 @@ const CartContextProvider = ({children})=>{
     }
 
     const isInCart = (id) => {
-        console.log(cart.filter(item => item.habId === id).length>0) 
         return (cart.filter(item => item.habId === id).length>0) 
         
     }

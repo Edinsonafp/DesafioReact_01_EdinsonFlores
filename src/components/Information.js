@@ -27,7 +27,7 @@ const Information = () => {
                 <label className="label">
                   <span className="label-text">Dinos algo</span>
                 </label>
-                <input type="text" placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs" />
+                <input type="text" placeholder="Type here" className="input input-bordered input-lg w-full max-w-xs" />
               </div>              
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Enviar</button>
