@@ -1,6 +1,6 @@
 export const habitaciones = [
-    {id: 1, title: "Suit", description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.", price:1000, pictureUrl: require("../contents/img/suit.jpg"), cantidad : 2},
-    {id: 2, title: "Doble", description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.", price:800, pictureUrl: require("../contents/img/doble.jpg"), cantidad : 3},
-    {id: 3, title: "Individual", description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.", price:500, pictureUrl: require("../contents/img/individual.jpg"), cantidad : 4},
-    {id: 4, title: "Compartida", description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.", price:400, pictureUrl: require("../contents/img/compartida.jpg"), cantidad : 5}
+    {id: 1, title: "Suit", description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.", price:1000, pictureUrl: "suit.jpg", cantidad : 2},
+    {id: 2, title: "Doble", description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.", price:800, pictureUrl: "doble.jpg", cantidad : 3},
+    {id: 3, title: "Individual", description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.", price:500, pictureUrl: "individual.jpg", cantidad : 4},
+    {id: 4, title: "Compartida", description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.", price:400, pictureUrl: "compartida.jpg", cantidad : 5}
 ]

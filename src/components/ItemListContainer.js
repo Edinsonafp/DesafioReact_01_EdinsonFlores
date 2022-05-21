@@ -1,6 +1,7 @@
 import React, { useState , useEffect } from 'react'
 import { habitaciones as habData } from "../data/habitaciones"
 import Item from './Item'
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 const ItemListContainer = () => {
 
@@ -8,7 +9,7 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     
-    const getHabs = new Promise ( (resolve, reject)=>{
+    /*const getHabs = new Promise ( (resolve, reject)=>{
       setTimeout(() => {
         resolve(habData)
       }, 0);
@@ -19,9 +20,21 @@ const ItemListContainer = () => {
       setHabs(result)
     }).catch((err)=>{
       console.log("hubo un error ", err)
-    })
+    })*/
+   getHabitaciones()
 
   }, [])  
+
+  const getHabitaciones = () => {
+    const db = getFirestore()
+    const habitacionesCollection = collection(db, 'habitaciones')
+    getDocs( habitacionesCollection ).then( snapshot =>{
+      if (snapshot.size > 0) {    
+        const habitacionesData = snapshot.docs.map( hab => ({'id': hab.id, ... hab.data()}) )
+        setHabs(habitacionesData)
+      }
+    })
+  }
 
   return (
     <div className="flex justify-between mt-2">

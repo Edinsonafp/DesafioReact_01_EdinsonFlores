@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { CartContext } from '../Context/cartContext'
-import { habitaciones } from '../data/habitaciones'
 import ItemCount from './ItemCount'
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const HabitacionDetail = () => {
 
@@ -15,22 +15,37 @@ const HabitacionDetail = () => {
     ? addItem(habitacion.id, habitacion, count, true, (count * parseInt(habitacion.price))) 
     : addItem(habitacion.id, habitacion, count, false, (count * parseInt(habitacion.price)))
   }
+
   useEffect(() => {
-    (async () => {
+    getHabitacionesDetail()
+    /*(async () => {
         const habData = await getHabitacionesDetail()
         if (habData) {
             setHabitacion(habData)
         }
-      })()
+      })()*/
   }, [habID])
-
+/*
   const getHabitacionesDetail = () => {
     return new Promise( (resolve) => {
       setTimeout(() => {
         resolve( habitaciones.find( hab => hab.id == habID) )
       }, 0);
     })
+  }*/
+
+  const getHabitacionesDetail = () => {
+    const db = getFirestore()
+    const habitacionDoc = doc(db, 'habitaciones', habID)
+    getDoc( habitacionDoc ).then( hab => {
+      if (hab.exists()) {
+        console.log('data:' , hab.data())
+        setHabitacion( {'id': hab.id, ...hab.data()} )
+      }
+    })
   }
+  const img = "suit.jpg";
+  const path = require(`../contents/img/${img}`);
 
  
   
@@ -38,7 +53,7 @@ const HabitacionDetail = () => {
   return (
     <>
     <div className="card card-side bg-base-100 shadow-xl">
-      <figure className='object-cover h-48 w-96'><img src={habitacion.pictureUrl} alt="Movie"/></figure>
+      <figure className='object-cover h-48 w-96'><img src={path} alt="Movie"/></figure>
       <div className="card-body">
         <h2 className="card-title">Habitacion {habitacion.title}</h2>
         <h2 className="card-title">{habitacion.price} por noche</h2>
