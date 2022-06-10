@@ -9,12 +9,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDB1UH2ZlWMyRKibb6HvXHnEAkLZ8X4MRA",
-  authDomain: "react-edinsonflores.firebaseapp.com",
-  projectId: "react-edinsonflores",
-  storageBucket: "react-edinsonflores.appspot.com",
-  messagingSenderId: "446257331744",
-  appId: "1:446257331744:web:be17f1644cff9e2ead8645"
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_APPID
 };
 
 // Initialize Firebase

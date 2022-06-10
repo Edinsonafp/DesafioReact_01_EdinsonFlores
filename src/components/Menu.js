@@ -11,7 +11,9 @@ const Menu = (props) => {
                     <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to="/">{props.index}</Link></li>
                         <li><Link to="/habitaciones">{props.hab}</Link></li>
+                        <li><Link to="/ordenes">Ordenes</Link></li>
                         <li><Link to="/info">{props.info}</Link></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -19,6 +21,7 @@ const Menu = (props) => {
                 <ul className="menu menu-horizontal p-0">
                     <li><Link to="/">{props.index}</Link></li>
                     <li><Link to="/habitaciones">{props.hab}</Link></li>
+                    <li><Link to="/ordenes">Ordenes</Link></li>
                     <li><Link to="/info">{props.info}</Link></li>
                 </ul>
             </div>

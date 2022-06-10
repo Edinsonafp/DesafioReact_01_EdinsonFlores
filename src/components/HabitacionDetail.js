@@ -18,37 +18,19 @@ const HabitacionDetail = () => {
 
   useEffect(() => {
     getHabitacionesDetail()
-    /*(async () => {
-        const habData = await getHabitacionesDetail()
-        if (habData) {
-            setHabitacion(habData)
-        }
-      })()*/
   }, [habID])
-/*
-  const getHabitacionesDetail = () => {
-    return new Promise( (resolve) => {
-      setTimeout(() => {
-        resolve( habitaciones.find( hab => hab.id == habID) )
-      }, 0);
-    })
-  }*/
 
   const getHabitacionesDetail = () => {
     const db = getFirestore()
     const habitacionDoc = doc(db, 'habitaciones', habID)
     getDoc( habitacionDoc ).then( hab => {
       if (hab.exists()) {
-        console.log('data:' , hab.data())
         setHabitacion( {'id': hab.id, ...hab.data()} )
       }
     })
   }
   const img = "suit.jpg";
-  const path = require(`../contents/img/${img}`);
-
- 
-  
+  const path = require(`../contents/img/${img}`); 
   
   return (
     <>
