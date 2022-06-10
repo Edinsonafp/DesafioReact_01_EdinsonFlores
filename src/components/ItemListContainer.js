@@ -8,18 +8,6 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     
-    /*const getHabs = new Promise ( (resolve, reject)=>{
-      setTimeout(() => {
-        resolve(habData)
-      }, 0);
-      
-    })
-
-    getHabs.then( (result) => {
-      setHabs(result)
-    }).catch((err)=>{
-      console.log("hubo un error ", err)
-    })*/
    getHabitaciones()
 
   }, [])  

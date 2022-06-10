@@ -13,14 +13,6 @@ const CartDetail = () => {
   const navigate = useNavigate();
   const date = new Date();  
   
-   
-
-  /*const saveCart = async (orden) => {
-    const db = getFirestore()
-    const { id } = await addDoc(collection(db, 'Ordenes'), orden)
-    console.log(id);
-  }*/
-
   const saveCartHandler = async () => {    
     const user = {
       nombre: nombre,

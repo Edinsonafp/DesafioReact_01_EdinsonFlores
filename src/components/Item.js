@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Item = ({habsData}) => {
-  //console.log(habsData.pictureUrl)
   const img = habsData.pictureUrl.replace('"', '');
   const path = require(`../contents/img/${img}`);
   return (
