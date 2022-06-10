@@ -24,7 +24,7 @@ Para ejecutar este proyecto debes correr el siguiente comando
 ## 🔗 Links
 - [Link del portafolio en GitHub](https://github.com/Edinsonafp/DesafioReact_01_EdinsonFlores.git)
 - [Link Versel](https://desafio-react-01-edinson-flores.vercel.app/)
-- [Link Video ejecución](https://desafio-react-01-edinson-flores.vercel.app/)
+- [Link Video ejecución](https://drive.google.com/file/d/18Uz8uCCCOEgk88sWEA7TSGMfqZLDhFfi/view?usp=sharing)
 
 ## Autor
 
